@@ -166,4 +166,4 @@ postcss: function(webpack) {
 [Gulp PostCSS]: https://github.com/postcss/gulp-postcss
 [Grunt PostCSS]: https://github.com/nDmitry/grunt-postcss
 [PostCSS]: https://github.com/postcss/postcss
-[Partial Import]: https://github.com/jonathantneal/postcss-partial-import
+[Partial Import]: https://github.com/saladcss/saladcss-partial-import
