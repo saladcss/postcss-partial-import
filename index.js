@@ -63,6 +63,7 @@ module.exports = postcss.plugin('postcss-partial-import', function (opts) {
 
 	var getPath = function (file, fromPath) {
 		if (!path.extname(file)) file = path.join(path.dirname(file), opts.prefix + path.basename(file) + '.' + opts.extension);
+		// console.log(fromPath);
 		return path.resolve(path.dirname(fromPath), file);
 	};
 
@@ -131,7 +132,7 @@ module.exports = postcss.plugin('postcss-partial-import', function (opts) {
 
 	var parseStyles = function (css, result, cache) {
 		var fromPath = result.opts.from || css.source.input.file;
-
+		
 		if (fromPath && cache && isCached(fromPath, cache)) {
 			return readFromCache(fromPath, result, cache).then(function (styles) {
 				styles.nodes.forEach(function (node) {
