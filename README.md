@@ -161,6 +161,25 @@ postcss: function(webpack) {
 },
 ```
 
+```javascript
+// postcss.config.js
+module.exports = function (webpack) {
+    const postcss = require('postcss'),
+    saladConfig = require('postcss-salad')(
+        {
+            //...
+            features: {
+                partialImport: {
+                    addDependencyTo: webpack.webpack
+                }
+            }
+        }
+    );
+
+    return saladConfig;
+};
+```
+
 [ci]: https://travis-ci.org/jonathantneal/postcss-partial-import
 [ci-img]: https://travis-ci.org/jonathantneal/postcss-partial-import.svg
 [Gulp PostCSS]: https://github.com/postcss/gulp-postcss
